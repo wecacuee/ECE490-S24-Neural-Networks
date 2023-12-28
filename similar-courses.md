@@ -1,4 +1,7 @@
-# Similar courses
+---
+layout: page
+title: Similar courses
+---
 1. Machine Learning Specialization (2022)
     [Website](https://www.coursera.org/specializations/machine-learning-introduction) | Instructor: Andrew Ng
 

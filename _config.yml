@@ -1,5 +1,5 @@
 url: https://vikasdhiman.info
-baseurl: /ECE490-Neural-Networks
+baseurl: /ECE490-S24-Neural-Networks
 remote_theme:  samarsault/plainwhite-jekyll
 title: Neural Networks (ECE490) at the University of Maine
 author: Vikas Dhiman
@@ -19,6 +19,7 @@ highlighter: pygments
 header_pages:
   - schedule.md
   - syllabus.md
+  - similar-courses.md
   - categories/lectures.md
   - categories/announcements.md
 
@@ -41,15 +42,15 @@ plainwhite:
 
   navigation:
     - title: Syllabus
-      url: "https://docs.google.com/document/d/e/2PACX-1vS73JkG6EWlYAphXwjDxdVcryT7SmCGtot2wpqLQfjV5KrozNmVwHoVtT2qyAvDERZk0y2dBfVU_QJE/pub"
+      url: "/syllabus"
     - title: Schedule
       url: "/schedule"
-    - title: Zoom link
-      url: "https://maine.zoom.us/j/87817514688?pwd=WkRsNnlZaitkYXpwQk5RZ2tJd3ZHUT09"
     - title: Similar courses
       url: "/similar-courses"
-    - title: Office hour appointment
-      url: "https://calendar.app.google/xB6KFEtRnVmqcuaL7"
+        # - title: Zoom link
+        #   url: "https://maine.zoom.us/j/87817514688?pwd=WkRsNnlZaitkYXpwQk5RZ2tJd3ZHUT09"
+        #  - title: Office hour appointment
+        #    url: "https://calendar.app.google/xB6KFEtRnVmqcuaL7"
     - title: Discord Server
       url: "https://discord.gg/scQjettBXC"
 
