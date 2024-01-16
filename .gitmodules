@@ -7,3 +7,6 @@
 [submodule "notebooks/10-gpt/minGPT"]
 	path = notebooks/10-gpt/minGPT
 	url = git@github.com:karpathy/minGPT.git
+[submodule "notebooks/00-intro/realengineersknowmaths"]
+	path = notebooks/00-intro/realengineersknowmaths
+	url = https://vikas.dhiman%40maine.edu@git.overleaf.com/64c805e07dd8b3bf79bbc5a7
