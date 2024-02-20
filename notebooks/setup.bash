@@ -1,2 +1,3 @@
-conda_init
-conda activate nbgrader || conda activate ece490
+cd ../../nbgrader-notebooks
+pipenv shell
+cd -
