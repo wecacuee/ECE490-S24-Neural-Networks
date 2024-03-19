@@ -37,6 +37,7 @@ $$ R = \text{ all the } x \text{ such that } L(x) \le \eta $$ where $L(x) =
 
 
 
+<!--
 #### Similarities between Problem 20 and Example 9.13
 1. Both the problems deal with multiple Gaussian random variables. Example 9.13
 deals with two Gaussian random variables $X_1$ and $X_2$. Problem 20 tdeals with three
@@ -56,6 +57,7 @@ variable have the same distribution.
 
 4. Both problems use $\gamma$ to find false acceptance probability aka false
    negative rate $P(\hat{Y}(x) = 0 | Y = 1)$.
+-->
 
 #### Example 9.13 (from Bertsekas Section 9.3)
 
@@ -92,6 +94,30 @@ for some scalar $\gamma$. Determine the value of $\gamma$. What is the correspon
     -\frac{(x_1-\mu_1)^2}{2\sigma_1^2}-\frac{(x_2-\mu_2)^2}{2\sigma_2^2}
     \right)
     $$
+
+3. Theorem 2: Addition of two i.i.d Gaussian random variables $X_1$ and
+   $X_2$ with mean and variance $\mu_X$ and $\sigma_X^2$. Note that
+   identically distributed means that they have the same distribution, and
+   hence same mean and variance.
+
+    The probability distribution of $Z = X_1 + X_2$ is a Gaussian (proof
+    omitted here) with
+    mean $\mu_Z = E[Z] = E[X_1 + X_2] = E[X_1] + E[X_2] = 2\mu_{X}$ 
+    and the standard deviation (use $\sigma_Y^2 = \text{Var}[Y] = E[Y^2] - E[Y]^2$)
+    $$\sigma_Z^2
+    = E[(X_1+X_2)^2] - \mu_Z^2
+    = E[X_1^2 + X_2^2 + 2X_1X_2] + \mu_Z^2
+    = E[X_1^2] + E[X_2^2] + 2E[X_1X_2] - \mu_Z^2
+    $$
+    Note that for independent random variables $X_1$ and $X_2$, $E[X_1X_2] =
+    E[X_1]E[X_2] = \mu_{X}^2$. Also, $E[X_1^2] = \sigma_{X}^2 + \mu_{X}^2 = E[X_2^2]$.
+    We get 
+    $$ \sigma_Z = \sqrt{2\sigma_{X}^2 + 2\mu_{X}^2 + 2\mu_X^2 - \mu_Z^2}
+    = \sqrt{2\sigma_{X}^2 + 2\mu_{X}^2 + 2\mu_X^2 - 4\mu_X^2}
+    = \sqrt{2}\sigma_X$$
+
+    In general when we add $n$ i.i.d. Gaussian random variables, the mean
+    of the sum $Z_n = X_1 + \dots + X_n$ gets multiplied by $n$ ($\mu(Z_n) = n\mu_X$) and standard deviation gets multiplied by $\sqrt{n}$ ($\sigma(Z_n) = \sqrt{n} \sigma_X$).
 
 3. Let the mean and standard deviation of i.i.d (independent and identically
    distributed) random variables $X_1$ $X_2$ under positive class $Y=1$ be $\mu_1$
@@ -170,5 +196,93 @@ for some scalar $\gamma$. Determine the value of $\gamma$. What is the correspon
     - \frac{(x_2 - \mu_1)^2}{2\sigma_1^2}
     + \frac{(x_1 - \mu_0)^2}{2\sigma_0^2}
     + \frac{(x_2 - \mu_0)^2}{2\sigma_0^2}
-     > \log(\eta) + \log(\sigma_1^2) - \log(\sigma_0^2)
+     > \log(\eta
+    \frac{\sigma_1^2}{\sigma_0^2})
     $$
+
+5. We can substitute the given values for this Example 9.13 problem, where
+   $\mu_0 = 0$, $\mu_1 = 2$, $\sigma_0 = \sigma_1 = 1$ (unit variance). We
+   pick the positive class $\hat{Y}(x) = 1$ if,
+   $$ 
+    - \frac{(x_1 - 2)^2}{2}
+    - \frac{(x_2 - 2)^2}{2}
+    + \frac{(x_1 )^2}{2}
+    + \frac{(x_2 )^2}{2}
+     > \log(\eta
+    \frac{\sigma_1^2}{\sigma_0^2})
+    $$
+
+   $$ 
+    - (x_1^2 - 2x_1 + 4)
+    - (x_2^2 - 2x_2 + 4)
+    + (x_1 )^2
+    + (x_2 )^2
+     > 2\log(\eta
+    \frac{\sigma_1^2}{\sigma_0^2})
+    $$
+    
+   $$ 
+    + 2x_1 - 4
+    + 2x_2 - 4
+     > 2\log(\eta
+    \frac{\sigma_1^2}{\sigma_0^2})
+    $$
+    
+   $$ 
+    + 2x_1 - 4
+    + 2x_2 - 4
+     > 2\log(\eta
+    \frac{\sigma_1^2}{\sigma_0^2})
+    $$
+
+   $$ 
+    x_1 + x_2
+     > \log(\eta
+    \frac{\sigma_1^2}{\sigma_0^2}) + 4
+    $$
+    
+    Let $\gamma = \log(\eta \frac{\sigma_1^2}{\sigma_0^2}) + 4$.
+    
+    In summary,
+    $$ \hat{Y}(x)
+    = \begin{cases} 1 & \text{if } L(x) > \eta \\
+    0 & \text{otherwise}
+    \end{cases}
+    = \begin{cases} 1 & \text{if } x_1 + x_2 > \gamma \\
+    0 & \text{otherwise}
+    \end{cases}
+    $$
+
+7. We are given the false positive rate:
+    $$ P(\hat{Y}(x) = 1 | Y = 0) = 0.05 $$ 
+    By liklihood ratio test, $\hat{Y}(x) = 1$ when $x_1 + x_2 > \gamma$.
+    $$ P(X_1 + X_2 > \gamma | Y = 0) = 0.05 $$ 
+    We swapped $x_1$ (and $x_2$) with $X_1$ (and $X_2$) to highlight that $X_1$ (and $X_2$) is a random variable.
+    Use Theorem 2 to get $\mu_Z = 2 \mu_X$ and $\sigma_Z = \sqrt{2} \sigma_X$.
+    Normal tables allow us to look values for zero mean unit normal
+    distributions.
+    $$ P\left(\frac{X_1 + X_2-\mu_Z}{\sigma_Z} > \frac{\gamma - \mu_Z}{\sigma_Z} \Big| Y = 0\right) = 0.05 $$ 
+    $$ 1-P\left(\frac{X_1 + X_2-\mu_Z}{\sigma_Z} \le \frac{\gamma - \mu_Z}{\sigma_Z} \Big| Y = 0\right) = 0.05 $$ 
+    $$ \Phi\left(\frac{\gamma - \mu_Z}{\sigma_Z}\right) = 1-0.05 = 0.95 $$ 
+
+    Looking at the normal tables, $\Phi(1.65) = 0.95$, hence 
+    $\frac{\gamma - \mu_Z}{\sigma_Z} = 1.65$ 
+    or $\gamma =  1.65 \sigma_Z = 1.65 \sqrt{2} \sigma_X = 1.65 \sqrt{2}
+    \sigma_0  = 2.331$.
+
+    In summary, when $\gamma = 2.331$, the false positive rate is 0.05.
+
+8. To find True positive rate, use $\gamma = 2.331$
+   $$P(\hat{Y} = 1|Y=1) = P(X_1 + X_2 > \gamma | Y = 1)
+= 1 - P\left(\frac{X_1 + X_2 - \mu_Z}{\sigma_Z } \le \frac{\gamma - \mu_Z}{\sigma_Z} | Y = 1\right)$$
+
+   When $Y=1$, the $\mu_X = \mu_1 = 2$ and $\sigma_X = \sigma_1 = 1$. Hence
+   $\mu_Z = 2\mu_X = 4$ and $\sigma_Z = \sqrt{2} \sigma_X = \sqrt{2}$.
+   With these values, the True positive rate is,
+   $$ P(\hat{Y} = 1|Y=1) = 1-\Phi\left(\frac{\gamma - \mu_Z}{\sigma_Z} \right). $$
+   or 
+   $$ P(\hat{Y} = 1|Y=1) = 1-\Phi\left(\frac{2.331- 4}{\sqrt{2}} \right) = 1-\Phi(-1.180) =
+   1-(1-\Phi(1.180)) = \Phi(1.180) = 0.964$$
+
+   In summary, when $\gamma$ is chosen so that false positive rate is $0.05$,
+   then $\gamma = 2.331$ and true positive rate is $0.964$.
