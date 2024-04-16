@@ -4,6 +4,9 @@
 [submodule "assets/reveal.js-plugins"]
 	path = assets/reveal.js-plugins
 	url = https://github.com/rajgoel/reveal.js-plugins.git
+[submodule "notebooks/10-gpt/nanoGPT"]
+	path = notebooks/10-gpt/nanoGPT
+	url = https://github.com/karpathy/nanoGPT.git
 [submodule "notebooks/10-gpt/minGPT"]
 	path = notebooks/10-gpt/minGPT
-	url = git@github.com:karpathy/minGPT.git
+	url = https://github.com/karpathy/minGPT.git
