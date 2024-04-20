@@ -1,0 +1,45 @@
+
+├── 01-py-intro
+│   ├── Python_1.ipynb
+│   ├── Python_2.ipynb
+├── 02-linear-models
+│   ├── ContinuousOptimization.ipynb
+│   ├── Hessians.ipynb
+│   ├── Perceptron3.ipynb
+│   ├── PlaneFitProblem.ipynb
+│   ├── VisEigenVectors.ipynb
+├── 03-autograd
+│   ├── Autograd.ipynb
+│   ├── AutogradNumpy.ipynb
+├── 04-review
+│   ├── Midterm1-S24.ipynb
+│   ├── NumpyTutorial.ipynb
+│   ├── Practice Problems 20240222.ipynb
+├── 05-mlp
+│   ├── DataModelsAndLearning.ipynb
+│   ├── microtorch.ipynb
+│   ├── microtorch_mlp.ipynb
+│   ├── microtorch_nn.py
+│   ├── microtorch.py
+│   ├── MLP.ipynb
+│   ├── UDLBook_Shallow.ipynb
+├── 06-pytorch
+│   ├── MLP Using Pytorch.ipynb
+│   └── NumpyTutorial-Pytorched.ipynb
+├── 07-cnn
+│   ├── CNN.ipynb
+│   ├── CNN-0411.ipynb
+├── 081-project
+│   ├── Project scope and instructions.ipynb
+├── 08-review
+│   └── Midterm 2 Review.ipynb
+├── 09-vanishing
+   └── VanishingAndExplodingGradients.ipynb
+├── 11-regularization-resnets
+│   ├── regularization-0420.pdf
+│   ├── regularization-0420.xoj
+│   ├── regularization.pdf
+│   ├── regularization.xoj
+│   ├── resnets.pdf
+│   └── resnets.xoj
+├── index.ipynb

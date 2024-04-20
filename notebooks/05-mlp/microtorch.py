@@ -3,6 +3,8 @@
 # 2. https://github.com/mattjj/autodidact
 # 3. https://github.com/mattjj/autodidact/blob/master/autograd/numpy/numpy_vjps.py
 # 4. https://github.com/hips/autograd
+# For detailed documentation please refer to 
+# AutogradNumpy.ipynb
 from collections import namedtuple
 import numpy as np
 
@@ -102,7 +104,7 @@ def exp_vjp(dldf, x):
     dldx = dldf * np.exp(x)
     return (unbroadcast(x, dldx),)
 
-exp = Op(
+expop = Op(
     apply=np.exp,
     vjp=exp_vjp,
     name='exp',
@@ -111,7 +113,7 @@ exp = Op(
 def log_vjp(dldf, x):
     dldx = dldf / x
     return (unbroadcast(x, dldx),)
-log = Op(
+logop = Op(
     apply=np.log,
     vjp=log_vjp,
     name='log',
@@ -153,15 +155,15 @@ NoOp = Op(apply=None, name='', vjp=None, nargs=0)
 
 def exp(tensor):
     tensor = tensor if isinstance(tensor, Tensor) else Tensor(tensor)
-    return Tensor(exp.apply(tensor.value),
+    return Tensor(expop.apply(tensor.value),
                 parents=(tensor,),
-                op=exp)
+                op=expop)
 
 def log(tensor):
     tensor = tensor if isinstance(tensor, Tensor) else Tensor(tensor)
-    return Tensor(log.apply(tensor.value),
+    return Tensor(logop.apply(tensor.value),
                 parents=(tensor, ),
-                op=log)
+                op=logop)
 
 class Tensor:
     __array_priority__ = 100

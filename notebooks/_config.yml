@@ -1,0 +1,17 @@
+# In _config.yml
+title: ECE490/590 Neural Networks at the University of Maine
+author: Vikas Dhiman
+execute:
+  execute_notebooks: auto
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+
+# Information about where the book exists on the web
+repository:
+  url                       : https://github.com/wecacuee/ECE490-S24-Neural-Networks  # Online location of your book
+  path_to_book              : notebooks  # Optional path to your book, relative to the repository root
+  branch                    : master  # Which branch of the repository should be used when creating links (optional)
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
